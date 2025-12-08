@@ -11,10 +11,8 @@ public:
         }
         int twoStep = 0;
         if(idx + 1 < n && s[idx] != '0'){
-            int num = 0;
-            num = (num * 10) + (s[idx] - '0');
-            num = (num * 10) + (s[idx + 1] - '0');
-            if(num >= 1 && num <= 26){
+            int twoDigit = ((s[idx] - '0') * 10 ) + (s[idx + 1] - '0');
+            if(twoDigit >= 1 && twoDigit <= 26){
                 twoStep = solve(s, idx + 2, n);
             }
         }
