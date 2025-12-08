@@ -4,6 +4,11 @@ public:
     int solve(string s, int idx, int n){
         if(idx >= n) return 1;
         if(dp[idx] != -1) return dp[idx];
+        int oneDigit = s[idx] - '0';
+        int oneStep = 0;
+        if(oneDigit >= 1 && oneDigit <= 26){
+            oneStep = solve(s, idx + 1, n);
+        }
         int twoStep = 0;
         if(idx + 1 < n && s[idx] != '0'){
             int num = 0;
@@ -12,11 +17,6 @@ public:
             if(num >= 1 && num <= 26){
                 twoStep = solve(s, idx + 2, n);
             }
-        }
-        int newValue = s[idx] - '0';
-        int oneStep = 0;
-        if(newValue >= 1 && newValue <= 26){
-            oneStep = solve(s, idx + 1, n);
         }
         return dp[idx] = twoStep + oneStep;
     }
