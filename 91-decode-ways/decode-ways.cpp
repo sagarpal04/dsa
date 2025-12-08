@@ -6,7 +6,7 @@ public:
         if(dp[idx] != -1) return dp[idx];
         int oneDigit = s[idx] - '0';
         int oneStep = 0;
-        if(oneDigit >= 1 && oneDigit <= 26){
+        if(oneDigit >= 1 && oneDigit <= 9){
             oneStep = solve(s, idx + 1, n);
         }
         int twoStep = 0;
