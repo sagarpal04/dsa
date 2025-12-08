@@ -1,6 +1,6 @@
 <h2><a href="https://leetcode.com/problems/complete-prime-number">Complete Prime Number</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer <code>num</code>.</p>
 
-<p>A number <code>num</code> is called a <strong>Complete Prime Number</strong> if every <strong>prefix</strong> and every <strong>suffix</strong> of <code>num</code> is <strong>prime</strong>.</p>
+<p>A number <code>num</code> is called a <strong>Complete <span data-keyword="prime-number">Prime Number</span></strong> if every <strong>prefix</strong> and every <strong>suffix</strong> of <code>num</code> is <strong>prime</strong>.</p>
 
 <p>Return <code>true</code> if <code>num</code> is a Complete Prime Number, otherwise return <code>false</code>.</p>
 
@@ -9,7 +9,6 @@
 <ul>
 	<li>A <strong>prefix</strong> of a number is formed by the <strong>first</strong> <code>k</code> digits of the number.</li>
 	<li>A <strong>suffix</strong> of a number is formed by the <strong>last</strong> <code>k</code> digits of the number.</li>
-	<li>A <strong>prime</strong> number is a natural number greater than 1 with only two factors, 1 and itself.</li>
 	<li>Single-digit numbers are considered Complete Prime Numbers only if they are <strong>prime</strong>.</li>
 </ul>
 
