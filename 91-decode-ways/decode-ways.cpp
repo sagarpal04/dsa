@@ -3,7 +3,6 @@ public:
     vector<int> dp;
     int solve(string s, int idx, int n){
         if(idx >= n) return 1;
-        if(s[idx] == '0' && idx == 0) return 0;
         if(dp[idx] != -1) return dp[idx];
         int twoStep = 0;
         if(idx + 1 < n && s[idx] != '0'){
@@ -22,6 +21,7 @@ public:
         return dp[idx] = twoStep + oneStep;
     }
     int numDecodings(string s) {
+        if(s[0] == '0') return 0;
         dp.assign(s.size(), -1);
         return solve(s, 0, s.size());
     }
