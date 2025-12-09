@@ -1,16 +1,15 @@
 class Solution {
 public:
-    vector<int> dp;
-    int solve(vector<int>&nums, int idx, int n){
-        if(idx >= n) return 0;
-        if(dp[idx] != -1) return dp[idx];
-        int inclu = nums[idx] + solve(nums, idx + 2, n);
-        int exclu = solve(nums, idx + 1, n);
-        return dp[idx] = max(inclu, exclu);
-    }
     int rob(vector<int>& nums) {
         int n = nums.size();
-        dp.assign(n + 1, -1);
-        return solve(nums, 0, n);
+        if(n == 1) return nums[0];
+        int prev1 = max(nums[0], nums[1]);     
+        int prev2 = nums[0];       
+        for(int i = 2; i < n; i++){
+            int curr = max(prev1, prev2 + nums[i]);
+            prev2 = prev1;   
+            prev1 = curr;    
+        }
+        return prev1;
     }
 };
